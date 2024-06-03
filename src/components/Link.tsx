@@ -1,8 +1,9 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "../styles/Theme";
 
-export const Link = styled.a`
+export const Link = styled.a<{ active?: boolean }>`
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 1px;
@@ -28,4 +29,10 @@ export const Link = styled.a`
     right: 0;
     z-index: -1;
   }
+
+  ${(props) =>
+    props.active &&
+    css<{ active?: boolean }>`
+      height: 10px;
+    `}
 `;
